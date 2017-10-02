@@ -6,12 +6,15 @@ var port = process.env.PORT;
 
 //Static
 app.use(express.static('public'));
-app.use(express.static('src/views'));
 app.use(express.static('bower_components'));
+
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
 
 //Routing
 app.get('/', function(req, res){
-    res.send('Hello World!');
+    //res.send('Hello World!');
+    res.render('index', {list: ['val1', 'val2', 'val3']});
 });
 
 //Routing
