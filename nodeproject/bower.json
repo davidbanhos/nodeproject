@@ -1,4 +1,4 @@
-bow{
+{
   "name": "node-project",
   "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
   "main": "server.js",
@@ -6,7 +6,7 @@ bow{
     "Mostafa Eweda <mo.eweda@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/davidbanhos/nodeproject",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,5 +16,17 @@ bow{
   ],
   "dependencies": {
     "bootstrap": "^3.3.7"
+  },
+  
+ "overrides":{
+    "bootstrap" : {
+         "main": [
+            "less/bootstrap.less",
+            "dist/css/bootstrap.css",
+            "dist/js/bootstrap.js"
+          ]
+    }
   }
+
+  
 }
