@@ -13,8 +13,12 @@ app.set('view engine', 'ejs');
 
 //Routing
 app.get('/', function(req, res){
-    //res.send('Hello World!');
-    res.render('index', {list: ['val1', 'val2', 'val3']});
+    res.render('index',
+        {
+            list: ['val1', 'val2', 'val3'],
+            nav: ['Services', 'Portfolio', 'About', 'Team', 'Contact']
+        }   
+    );
 });
 
 //Routing
