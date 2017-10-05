@@ -1,5 +1,18 @@
 var express = require('express');
 var app = express();
+var eventRouter = express.Router();
+
+eventRouter.route('/')
+    .get(function(req, res) {
+        res.send('Hello Events!');
+    });
+
+eventRouter.route('/event')
+    .get(function(req, res) {
+        res.send('Hello Single Event!');
+    });
+
+app.use('/Events',eventRouter);
 
 //Cloud9 por assignment
 var port = process.env.PORT;
@@ -16,7 +29,15 @@ app.get('/', function(req, res){
     res.render('index',
         {
             list: ['val1', 'val2', 'val3'],
-            nav: ['Services', 'Portfolio', 'About', 'Team', 'Contact']
+            //nav: ['Services', 'Portfolio', 'About', 'Team', 'Contact']
+            nav: [
+                    { Link: 'Services', Text: 'Services' },
+                    { Link: 'Portfolio' , Text: 'Portfolio' },
+                    { Link: 'About' , Text: 'About' },
+                    { Link: 'Team' , Text: 'Team' },
+                    { Link: 'Contact' , Text: 'Contact' },
+                    { Link: 'Events' , Text: 'Events' }
+            ]
         }   
     );
 });
