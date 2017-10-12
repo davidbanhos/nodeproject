@@ -1,11 +1,15 @@
 var express = require('express');
 var app = express();
-var eventRouter = require('./src/routes/eventRoutes');
-
-app.use('/Events',eventRouter);
 
 //Cloud9 por assignment
 var port = process.env.PORT;
+
+var eventRouter = require('./src/routes/eventRoutes');
+var dbRouter = require('./src/routes/dbRoutes');
+
+app.use('/Events',eventRouter);
+app.use('/Db',dbRouter);
+
 
 //Static
 app.use(express.static('public'));
